@@ -1,5 +1,5 @@
 <template>
-	<input :id="this.id + '-flyte-picker'" class="flyte-picker"/>
+	<input :id="this.id + '-date-picker'" class="date-picker"/>
 </template>
 
 <script>
@@ -11,13 +11,15 @@
 		data() {
 			let fp = this;
 
+			let now = new Date();
+
 			let config = _.extend({
 				dateFormat:  'Y-m-d',
 				altFormat:   'm/d/Y',
 				altInput:    true,
-				defaultDate: this.value || new Date().reset(),
-				minDate:     new Date().reset(),
-				maxDate:     new Date().reset().addMonths(18),
+				defaultDate: this.value || now,
+				minDate:     now,
+				maxDate:     null,
 				onChange(selectedDates, dateStr, instance) {
 					fp.$emit('input', dateStr);
 					fp.$emit('change', selectedDates, dateStr);
@@ -37,7 +39,7 @@
 		},
 
 		mounted() {
-			//Initialize the flatpickr instance on the flyte-picker input element
+			//Initialize the flatpickr instance on the date-picker input element
 			this.flatpickr = flatpickr(this.$el, this.fpConfig);
 
 			//Give the altInput field the id of the original element (in case there is a label pointing to it)
@@ -64,11 +66,6 @@
 				if (newValue) {
 					//The onChange method will get triggered here, so make sure we do not send the select event
 					this.isUserSelect = false;
-
-					if (!(newValue instanceof Date)) {
-						//Make sure we are setting the correct day (casting to Date from string at the wrong time may fuck up)
-						newValue = new Date(newValue).tzCorrect();
-					}
 
 					this.flatpickr.setDate(newValue);
 
