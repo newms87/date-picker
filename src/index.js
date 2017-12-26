@@ -1,10 +1,6 @@
-import VueDatepicker from './DatePicker.vue';
-
-const Plugin = (Vue, params) => {
-	Vue.component(typeof params === 'string' ? params : 'vue-datepicker', VueDatepicker);
-};
-
-VueDatepicker.install = Plugin;
+import VueDatePicker from './DatePicker.vue';
+import VueDateRangePicker from './DateRangePicker.vue';
+import VueDateMultiPicker from './DateMultiPicker.vue';
 
 export default VueDatepicker;
-export {VueDatepicker, Plugin};
+export {VueDatePicker, VueDateRangePicker, VueDateMultiPicker};
