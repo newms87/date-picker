@@ -3,6 +3,8 @@
 </template>
 
 <script>
+	import flatpickr from 'flatpickr';
+
 	export default {
 		props: ['id', 'config', 'value'],
 

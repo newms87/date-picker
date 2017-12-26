@@ -1,43 +1,33 @@
 {
   "name": "vue-datepicker",
-  "version": "1.0.1",
-  "description": "A VueJS component for Flatpickr, a date time picker",
-  "main": "dist/vue-datepicker.js",
-  "unpkg": "dist/vue-datepicker.min.js",
+  "version": "1.0.0",
+  "description": "VueJS datepicker component using flatpickr",
+  "main": "src/index.js",
+  "dependencies": {
+    "flatpickr": "^4.1.4"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "vue": ">=2"
+  },
+  "scripts": {
+    "test": "test"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/newms87/date-picker"
+    "url": "git+https://github.com/newms87/vue-datepicker.git"
   },
   "keywords": [
     "vue",
-    "flatpickr",
-    "vue-datepicker",
+    "vuejs",
     "datepicker",
-    "date-picker",
-    "timepicker"
+    "flatpickr",
+    "vue-datepicker"
   ],
-  "author": "newms87",
+  "author": "Daniel Newman <dan@amploweb.com> (amploweb.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/newms87/vue-datepicker/issues"
   },
-  "homepage": "https://github.com/newms87/date-picker",
-  "scripts": {
-    "test:watch": "npm run test -- --watch --onlyChanged --notify",
-    "start": "npm run dev",
-    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config=webpack.config.dev.js",
-    "build": "node ./node_modules/webpack/bin/webpack.js --hide-modules -p --progress"
-  },
-  "dependencies": {
-    "flatpickr": "^4.1.4"
-  },
-  "devDependencies": {
-    "vue": "^2.5.13",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7"
-  },
-  "engines": {
-    "node": ">= 4.2.0",
-    "npm": ">= 3.0.0"
-  }
+  "homepage": "https://github.com/newms87/vue-datepicker#readme"
 }
