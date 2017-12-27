@@ -1,6 +1,6 @@
 {
   "name": "vue-datepicker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "VueJS datepicker component using flatpickr",
   "main": "src/index.js",
   "dependencies": {

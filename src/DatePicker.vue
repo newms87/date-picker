@@ -9,7 +9,7 @@
 		props: ['id', 'config', 'value'],
 
 		data() {
-			let fp = this;
+			let self = this;
 
 			let now = new Date();
 
@@ -18,14 +18,14 @@
 				altFormat:   'm/d/Y',
 				altInput:    true,
 				defaultDate: this.value || now,
-				minDate:     now,
+				minDate:     null,
 				maxDate:     null,
 				onChange(selectedDates, dateStr, instance) {
-					fp.$emit('input', dateStr);
-					fp.$emit('change', selectedDates, dateStr);
+					self.$emit('input', dateStr);
+					self.$emit('change', selectedDates, dateStr);
 
-					if (fp.isUserSelect) {
-						fp.$emit('select', selectedDates, dateStr);
+					if (self.isUserSelect) {
+						self.$emit('select', selectedDates, dateStr);
 					}
 				},
 
